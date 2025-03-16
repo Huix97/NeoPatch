@@ -4,7 +4,9 @@
   "package": "neopatch.mixin",
   "refmap": "neopatch.refmap.json",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "BlockSrc$BlockStateBase"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

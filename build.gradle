@@ -34,7 +34,7 @@ neoForge {
         minecraftVersion = project.parchment_minecraft_version
     }
 
-    accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
+    accessTransformers = project.files('src/main/templates/accesstransformer.cfg')
 
     runs {
         client {
@@ -105,6 +105,13 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
         expand replaceProperties
         name 'META-INF/neoforge.mods.toml'
     }
+    filesMatching('accesstransformer.cfg') {
+        name 'META-INF/accesstransformer.cfg'
+    }
+    filesMatching('enumextensions.json'){
+        name 'META-INF/enumextensions.json'
+    }
+
 
     from "src/main/templates"
     into "build/generated/sources/modMetadata"

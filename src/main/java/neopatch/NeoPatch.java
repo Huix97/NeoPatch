@@ -1,5 +1,6 @@
 package neopatch;
 
+import neopatch.propertie.PComponents;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -41,7 +42,7 @@ public class NeoPatch {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public NeoPatch(IEventBus modEventBus, ModContainer modContainer) {
-
+        PComponents.P_COMPONENTS.register(modEventBus);
     }
 
 }
